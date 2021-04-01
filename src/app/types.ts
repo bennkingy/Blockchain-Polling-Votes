@@ -3,7 +3,8 @@ export interface Poll {
   question: string,
   results: number[],
   options: string[],
-  thumbnail: string;
+  image: string;
+  voted: boolean;
 }
 
 export interface Voter {

@@ -1,0 +1,10 @@
+.poll-image {
+  width: 100%;
+  max-height: 300px;
+  > img {
+    height: 180px;
+    width: inherit;
+    background-size: contain;
+    background-position: center center;
+  }
+}

@@ -1,11 +1,11 @@
-pragma solidity ^0.6.6;
+pragma solidity ^0.8.1;
 
 contract PollContract {
 
     struct Poll {
         uint256 id;
         string question;
-        string thumbnail;
+        string image;
         uint64[] votes;
         bytes32[] options;
     }
@@ -21,7 +21,7 @@ contract PollContract {
 
     event PollCreated(uint256 _pollId);
 
-    function createPoll(string memory _question, string memory _thumb, bytes32[] memory  _options) public {
+    function createPoll(string memory _question, string memory _image, bytes32[] memory  _options) public {
         require(bytes(_question).length > 0, "Empty question");
         require(_options.length > 1, "At least 2 options required");
 
@@ -30,7 +30,7 @@ contract PollContract {
         Poll memory newPoll = Poll({
             id: pollId,
             question: _question,
-            thumbnail: _thumb,
+            image: _image,
             options: _options,
             votes: new uint64[](_options.length)
         });
@@ -44,7 +44,7 @@ contract PollContract {
         return (
             polls[_pollId].id,
             polls[_pollId].question,
-            polls[_pollId].thumbnail,
+            polls[_pollId].image,
             polls[_pollId].votes,
             polls[_pollId].options
         );

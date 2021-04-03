@@ -30,10 +30,12 @@
   <div class="container poll-detail">
     <app-poll-vote
       *ngIf="activePoll"
+        [id]="activePoll.id"
         [voted]="activePoll.voted"
         [question]="activePoll.question"
         [options]="activePoll.options"
         [results]="activePoll.results"
+        (pollVoted)="handlePollVote($event)"
     ></app-poll-vote>
   </div>
 </div>

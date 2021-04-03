@@ -14,3 +14,8 @@ export interface Voter {
   id: string;
   voted: number[];
 }
+
+export interface PollVote {
+  id: number;
+  vote: number;
+}

@@ -23,7 +23,6 @@ export class PollCreateComponent {
   }
 
   submitForm() {
-    console.log(this.pollForm.value);
     const formData: PollForm = {
       question: this.pollForm.get("question").value,
       image: this.pollForm.get("image").value,
